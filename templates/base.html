@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+
+    <title>Crane</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap');
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ get_url(path="style.css", trailing_slash=false) }}"
+    />
+  </head>
+  <body>
+    {% block body %}{% endblock %}
+  </body>
+</html>

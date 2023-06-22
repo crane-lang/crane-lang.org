@@ -1,0 +1,54 @@
+// Color palette.
+$crane-red: #a80105;
+$raisin-black: #171621;
+$ash-gray: #b9bbb3;
+$slate-gray: #73889d;
+$cadet-gray: #8b9cab;
+
+.crane-red {
+  color: $crane-red;
+}
+
+.bg-crane-red {
+  background-color: $crane-red;
+}
+
+.raisin-black {
+  color: $raisin-black;
+}
+
+.bg-raisin-black {
+  background-color: $raisin-black;
+}
+
+.ash-gray {
+  color: $ash-gray;
+}
+
+.bg-ash-gray {
+  background-color: $ash-gray;
+}
+
+.slate-gray {
+  color: $slate-gray;
+}
+
+.bg-slate-gray {
+  background-color: $slate-gray;
+}
+
+.cadet-gray {
+  color: $cadet-gray;
+}
+
+.bg-cadet-gray {
+  background-color: $cadet-gray;
+}
+
+.commissioner {
+  font-family: "Commissioner", sans-serif;
+}
+
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+}
