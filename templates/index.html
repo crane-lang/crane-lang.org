@@ -2,12 +2,61 @@
 
 {% block body %}
 <body class="space-grotesk raisin-black bg-near-white f4">
-  <main class="mw7 center tc">
-    <h1 class="f-headline fw3 commissioner lh-title crane-red">Crane</h1>
+  <header
+    class="flex items-center justify-between fixed left-0 right-0 ph4 ph7-l pv2 bg-crane-red"
+  >
+    <a class="link near-white f2 fw3 commissioner" href="/">Crane</a>
 
-    <p class="lh-copy">A programming language.</p>
+    <nav>
+      <a class="link near-white" href="https://github.com/crane-lang/crane">
+        GitHub
+      </a>
+    </nav>
+  </header>
 
-    <a class="link db slate-gray underline-hover" href="https://github.com/crane-lang/crane">Check it out on GitHub.</a>
+  <div class="flex items-center justify-around vh-100 near-white bg-crane-red">
+    <div class="tc">
+      <h1 class="f-headline fw3 commissioner lh-title near-white">Crane</h1>
+
+      <p class="lh-copy">
+        A programming language for creating robust and elegant software.
+      </p>
+    </div>
+
+    {% set scroll_to_id = "about" %}
+    <button
+      class="button-reset link absolute bottom-0 ma4 near-white bg-transparent b--none pointer"
+      onclick="document.getElementById('{{ scroll_to_id }}').scrollIntoView({ behavior: 'smooth' })"
+    >
+      More ↵
+    </button>
+  </div>
+
+  <div class="bg-light-yellow pa4">
+    <div class="mw7 center">
+      <p class="lh-copy">
+        <span class="pr3">⚠️</span>Crane is still very early in development.
+      </p>
+    </div>
+  </div>
+
+  <main class="mw7 center">
+    <section>
+      <h2 class="f1 lh-title" id="{{ scroll_to_id }}">About</h2>
+
+      <p class="lh-copy">
+        <strong>Crane</strong> is a programming language for writing robust and
+        elegant software that will endure over time.
+      </p>
+    </section>
   </main>
+
+  <footer class="mt6 pv5">
+    <div class="mw7 center">
+      <div class="flex items-end justify-center">
+        <span class="f5"> &copy; 2023 Marshall Bowers </span>
+      </div>
+    </div>
+  </footer>
 </body>
 {% endblock body %}
