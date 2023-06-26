@@ -1,0 +1,41 @@
+%YAML 1.2
+---
+# See https://www.sublimetext.com/docs/3/syntax.html
+name: Crane
+file_extensions:
+  - crane
+scope: source.crane
+
+contexts:
+  main:
+    - include: comment
+    - include: keyword
+    - include: item
+    - include: expr
+
+  comment:
+    - scope: comment.line.crane
+      match: //.*
+
+  keyword:
+    - scope: keyword.control.crane
+      match: \b(fn|let|mod|pub|struct|union|use)\b
+
+  item:
+    - scope: keyword.operator.path_delimiter.crane
+      match: "(::)"
+
+  expr:
+    - include: literal
+
+  literal:
+    - include: string_literal
+
+  string_literal:
+    - scope: string.quoted.double.begin.crane
+      match: '"'
+      push:
+        - meta_scope: string.quoted.double.crane
+        - scope: string.quoted.double.end.crane
+          match: '"'
+          pop: true

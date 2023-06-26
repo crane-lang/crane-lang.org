@@ -52,3 +52,34 @@ $cadet-gray: #8b9cab;
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
 }
+
+.jet-brains-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+//
+// Syntax theme overrides.
+//
+
+.z-code {
+  $border-width: 2px;
+
+  max-width: 30em;
+
+  padding: 1rem 2rem;
+
+  background-color: initial;
+
+  border-left: $border-width solid;
+  border-bottom: $border-width solid;
+  border-color: $crane-red;
+}
+
+.z-source {
+  @extend .jet-brains-mono;
+  @extend .raisin-black;
+}
+
+.z-comment {
+  font-style: normal;
+}
