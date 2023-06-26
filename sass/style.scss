@@ -57,6 +57,59 @@ $cadet-gray: #8b9cab;
   font-family: "JetBrains Mono", monospace;
 }
 
+.divider {
+  max-width: 32rem;
+  border: none;
+  border-top: medium double $crane-red;
+  text-align: center;
+
+  &:after {
+    content: "} {";
+    display: inline-block;
+    position: relative;
+    top: -1.05rem;
+    padding: 0.25rem;
+    font-family: "JetBrains Mono", monospace;
+    color: $crane-red;
+    background-color: #f4f4f4;
+  }
+}
+
+.markdown {
+  a {
+    @extend .slate-gray;
+  }
+
+  hr {
+    @extend .divider;
+  }
+
+  table {
+    $border-width: 2px;
+
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    & tr {
+      border-top: $border-width solid $raisin-black;
+    }
+
+    & th {
+      padding: 6px 13px;
+      border: $border-width solid $raisin-black;
+      font-weight: 600;
+    }
+
+    & td {
+      padding: 6px 13px;
+      border: $border-width solid $raisin-black;
+    }
+  }
+}
+
 //
 // Syntax theme overrides.
 //

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="pa4 bg-crane-red tc">
+  <h1 class="f-subheadline lh-title near-white mw7 center">Blog</h1>
+</div>
+
+<div class="mw7 center">
+  <ul>
+    {% for page in section.pages %}
+      <li><a class="link slate-gray underline" href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock content %}

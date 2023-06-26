@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="pa4 near-white bg-crane-red tc">
+  <h1 class="f-subheadline lh-title mw7 center">
+    {{ page.title }}
+  </h1>
+
+  {% if page.authors | length %}
+    <div class="lh-copy">
+      by {{ page.authors | join(sep = ", ") }}
+    </div>
+  {% endif %}
+
+  <div class="lh-copy">
+    {{ page.date | date(format="%B %e, %Y", timezone="America/New_York") }}
+  </div>
+</div>
+
+<div>
+  <main class="mw7 center measure lh-copy markdown">
+    {{ page.content | markdown | safe }}
+  </main>
+</div>
+{% endblock content %}

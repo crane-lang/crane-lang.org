@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+<body class="space-grotesk raisin-black bg-near-white f4">
+  <header class="fixed left-0 right-0 z-1 ph4 pv2 bg-crane-red">
+    <div class="flex items-center justify-between mw7 center">
+      <a class="link near-white f2 fw3 commissioner" href="/">Crane</a>
+
+      <nav>
+        <a class="link near-white underline-hover mr2" href="/blog">
+          Blog
+        </a>
+        <a class="link near-white underline-hover" href="https://github.com/crane-lang/crane">
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}{% endblock content %}
+
+  <footer class="mt6 pv5">
+    <div class="mw7 center">
+      <div class="flex items-end justify-center">
+        <span class="f5">&copy; 2023 Marshall Bowers</span>
+      </div>
+    </div>
+  </footer>
+</body>
+{% endblock body %}

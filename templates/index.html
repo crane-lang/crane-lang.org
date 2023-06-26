@@ -1,99 +1,77 @@
-{% extends "base.html" %}
+{% extends "layout.html" %}
 
-{% block body %}
-<body class="space-grotesk raisin-black bg-near-white f4">
-  <header class="fixed left-0 right-0 z-1 ph4 pv2 bg-crane-red">
-    <div class="flex items-center justify-between mw7 center">
-      <a class="link near-white f2 fw3 commissioner" href="/">Crane</a>
+{% block content %}
+<div class="flex items-center justify-around vh-100 near-white bg-crane-red">
+  <div class="tc">
+    <h1 class="f-headline fw3 commissioner lh-title near-white">Crane</h1>
 
-      <nav>
-        <a class="link near-white" href="https://github.com/crane-lang/crane">
-          GitHub
-        </a>
-      </nav>
-    </div>
-  </header>
+    <p class="f3 lh-copy measure-narrow">
+      A programming language for creating robust and elegant software.
+    </p>
+  </div>
 
-  <div class="flex items-center justify-around vh-100 near-white bg-crane-red">
-    <div class="tc">
-      <h1 class="f-headline fw3 commissioner lh-title near-white">Crane</h1>
+  {% set scroll_to_id = "about" %}
+  <button
+    class="button-reset link absolute bottom-0 ma4 near-white bg-transparent b--none pointer"
+    onclick="document.getElementById('{{ scroll_to_id }}').scrollIntoView({ behavior: 'smooth' })"
+  >
+    More ↵
+  </button>
+</div>
 
-      <p class="f3 lh-copy measure-narrow">
-        A programming language for creating robust and elegant software.
+<div class="bg-light-yellow pa4">
+  <div class="mw7 center">
+    <p class="lh-copy">
+      <span class="pr3">⚠️</span>Crane is still very early in development.
+    </p>
+  </div>
+</div>
+
+<div class="ph4">
+  <main class="mw7 center">
+    <section>
+      <h2 class="f1 lh-title" id="{{ scroll_to_id }}">About</h2>
+
+      <p class="lh-copy measure">
+        <strong>Crane</strong> is a programming language for writing robust and
+        elegant software that will endure over time.
       </p>
-    </div>
+    </section>
 
-    {% set scroll_to_id = "about" %}
-    <button
-      class="button-reset link absolute bottom-0 ma4 near-white bg-transparent b--none pointer"
-      onclick="document.getElementById('{{ scroll_to_id }}').scrollIntoView({ behavior: 'smooth' })"
-    >
-      More ↵
-    </button>
-  </div>
+    <section>
+      <h2 class="f1 lh-title" id="features">Features</h2>
 
-  <div class="bg-light-yellow pa4">
-    <div class="mw7 center">
-      <p class="lh-copy">
-        <span class="pr3">⚠️</span>Crane is still very early in development.
+      <p class="lh-copy measure">
+        Crane comes with all the features you need to write reliable software:
       </p>
-    </div>
-  </div>
 
-  <div class="ph4">
-    <main class="mw7 center">
-      <section>
-        <h2 class="f1 lh-title" id="{{ scroll_to_id }}">About</h2>
+      <ul class="lh-copy">
+        <li>A static, strong, and sound type system</li>
+        <li>Sum types<sup>&dagger;</sup>, like <code>Option</code> and <code>Result</code></li>
+        <li>Pattern matching<sup>&dagger;</sup> with exhaustiveness checks</li>
+        <li>Generics<sup>&dagger;</sup></li>
+      </ul>
 
-        <p class="lh-copy measure">
-          <strong>Crane</strong> is a programming language for writing robust and
-          elegant software that will endure over time.
-        </p>
-      </section>
+      <p class="lh-copy measure">
+        The inclusion of features alone is not what makes a good language. Equally important are the features that are not present:
+      </p>
 
-      <section>
-        <h2 class="f1 lh-title" id="features">Features</h2>
+      <ul class="lh-copy">
+        <li>No <code>null</code> or <code>undefined</code></li>
+        <li>No inheritance</li>
+        <li>No exceptions</li>
+      </ul>
 
-        <p class="lh-copy measure">
-          Crane comes with all the features you need to write reliable software:
-        </p>
-
-        <ul class="lh-copy">
-          <li>A static, strong, and sound type system</li>
-          <li>Sum types<sup>&dagger;</sup>, like <code>Option</code> and <code>Result</code></li>
-          <li>Pattern matching<sup>&dagger;</sup> with exhaustiveness checks</li>
-          <li>Generics<sup>&dagger;</sup></li>
-        </ul>
-
-        <p class="lh-copy measure">
-          The inclusion of features alone is not what makes a good language. Equally important are the features that are not present:
-        </p>
-
-        <ul class="lh-copy">
-          <li>No <code>null</code> or <code>undefined</code></li>
-          <li>No inheritance</li>
-          <li>No exceptions</li>
-        </ul>
-
-        <p class="f5 lh-copy">
-          <sup>&dagger;</sup>Not yet implemented.
-        </p>
-      </section>
-      
-      <section>
-        <div>
-          {{ load_data(path="code-snippets/hello_world.crane.md") | markdown | safe }}
-        </div>
-      </section>
-    </main>
-  </div>
-
-  <footer class="mt6 pv5">
-    <div class="mw7 center">
-      <div class="flex items-end justify-center">
-        <span class="f5">&copy; 2023 Marshall Bowers</span>
+      <p class="f5 lh-copy">
+        <sup>&dagger;</sup>Not yet implemented.
+      </p>
+    </section>
+    
+    <section>
+      <div>
+        {{ load_data(path="code-snippets/hello_world.crane.md") | markdown | safe }}
       </div>
-    </div>
-  </footer>
-</body>
-{% endblock body %}
+    </section>
+  </main>
+</div>
+{% endblock content %}
