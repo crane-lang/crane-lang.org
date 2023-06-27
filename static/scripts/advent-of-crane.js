@@ -46,10 +46,12 @@ const Countdown = ({ to, now }) => {
 
   const duration = durationToParts(ms);
 
-  const days = duration.days.toString().padStart(2, "0");
-  const hours = duration.hours.toString().padStart(2, "0");
-  const minutes = duration.minutes.toString().padStart(2, "0");
-  const seconds = duration.seconds.toString().padStart(2, "0");
+  const renderDigit = (value) => value.toString().padStart(2, "0");
+
+  const days = renderDigit(duration.days);
+  const hours = renderDigit(duration.hours);
+  const minutes = renderDigit(duration.minutes);
+  const seconds = renderDigit(duration.seconds);
 
   return html`<div className="jet-brains-mono">
     ${days}d ${hours}h ${minutes}m ${seconds}s
