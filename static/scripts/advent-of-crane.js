@@ -53,9 +53,7 @@ const Countdown = ({ to, now }) => {
   const minutes = renderDigit(duration.minutes);
   const seconds = renderDigit(duration.seconds);
 
-  return html`<div className="jet-brains-mono">
-    ${days}d ${hours}h ${minutes}m ${seconds}s
-  </div>`;
+  return html`<div>${days}d ${hours}h ${minutes}m ${seconds}s</div>`;
 };
 
 render(html`<${App} />`, document.getElementById("advent-of-crane"));
